@@ -1,0 +1,212 @@
+\documentclass[letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, 
+    top=0.6 cm, 
+    bottom=0.6 cm, 
+    left=0.6 cm, 
+    right=0.6 cm, 
+    footskip=0.8 cm, 
+]{geometry} 
+\usepackage{titlesec} 
+\usepackage{tabularx} 
+\usepackage{array} 
+\usepackage[dvipsnames]{xcolor} 
+\definecolor{primaryColor}{RGB}{0, 0, 0} 
+\usepackage{enumitem} 
+\usepackage{fontawesome5} 
+\usepackage{amsmath} 
+\usepackage[
+    pdftitle={JVK Chaitanya Resume - AI & Data Analytics},
+    pdfauthor={JVK Chaitanya},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} 
+\usepackage[pscoord]{eso-pic} 
+\usepackage{calc} 
+\usepackage{bookmark} 
+\usepackage{lastpage} 
+\usepackage{changepage} 
+\usepackage{paracol} 
+\usepackage{ifthen} 
+\usepackage{needspace} 
+\usepackage{iftex} 
+
+% Set specific font size
+\usepackage{fontsize}
+\changefontsize[11.5pt]{9.5pt}
+
+% Define missing command
+\newcommand{\hrefWithoutArrow}[2]{\href{#1}{#2}}
+
+% ATS Compatibility:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} 
+\pagestyle{empty} 
+\setcounter{secnumdepth}{0} 
+\setlength{\parindent}{0pt} 
+\setlength{\topskip}{0pt} 
+\setlength{\columnsep}{0.15cm} 
+\pagenumbering{gobble} 
+
+\titleformat{\section}{\needspace{3\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{0.5pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.2 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} 
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0pt,
+        parsep=0.02 cm,
+        partopsep=0pt,
+        itemsep=2pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0 cm + 0.00001 cm}{0 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol} 
+    \endonecolentry
+}
+
+\begin{document}
+    \newcommand{\AND}{\unskip\enskip|\enskip\ignorespaces}
+
+    \begin{center}
+        \fontsize{22pt}{22pt}\selectfont \textbf{JVK CHAITANYA}
+
+        \vspace{6pt}
+
+        \small
+        \mbox{College Station, TX} \AND
+        \mbox{\href{mailto:jvk_chaitanya@tamu.edu}{jvk\_chaitanya@tamu.edu}} \AND
+        \mbox{+1-(979) 599-8505} \AND
+        \mbox{\href{https://linkedin.com/in/jvk-chaitanya}{linkedin.com/in/jvk-chaitanya}} \AND
+        \mbox{\href{https://jvkchaitanya.github.io/portfolio/}{Portfolio}}
+    \end{center}
+
+    \section{Education}
+    \begin{twocolentry}{May 2026}
+        \textbf{Texas A\&M University}, College Station, TX \\
+        \textit{Master of Science in Data Science - CGPA: 3.7/4.0}
+    \end{twocolentry}
+    \begin{onecolentry}
+    \textit{Relevant Coursework:} Information Storage \& Retrieval, Big Data Tools, Deep Learning, Applied Analytics, Data Mining.
+    \end{onecolentry}
+
+    \vspace{0.1 cm}
+
+    \begin{twocolentry}{Sep 2022}
+        \textbf{SRM Institute of Science and Technology}, Chennai, India \\
+        \textit{Bachelor of Technology in Computer Science - CGPA: 9.2/10.0}
+    \end{twocolentry}
+
+\section{Technical Skills}
+\begin{onecolentry}
+    \begin{tabularx}{\linewidth}{@{} >{\bfseries}l @{\hspace{1em}} X @{}}
+    AI \& GenAI: & LLM Frameworks (LangChain), RAG Workflows, Prompt Engineering, Vector DBs (LanceDB), OpenAI API, AWS Bedrock, Stable Diffusion, WhisperX. \\
+    Data Science: & Python (Pandas, Scikit-learn, NLTK, Keras, PyTorch), R, SQL, Statistical Modeling, Optimization. \\
+    Cloud \& DevOps: & AWS (S3, Lambda, Step Functions), Supabase, Git, Docker, CI/CD, HPC Cluster Management. \\
+    Tools: & Alteryx, Tableau, REST APIs, JSON-LD, Next.js, Digital Repository Architectures. \\
+    Soft Skills: & Client Needs Identification, Technical Documentation, Agile (Scrum), Leading Cross-functional Teams.
+    \end{tabularx}
+\end{onecolentry}
+
+\section{Experience}
+
+\begin{twocolentry}{Sep 2025 -- Present}
+    \textbf{Student Technician}, University Libraries @ Texas A\&M University
+\end{twocolentry}
+\vspace{0.1cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{Design and maintain AI-driven digital repository pipelines} for large unstructured datasets using AWS Step Functions, Lambda, and Bedrock to automate metadata extraction and improve searchability.
+        \item \textbf{Develop automated transcription microservices} using WhisperX on HPC clusters, processing complex oral history archives and reducing manual intervention by \textbf{90\%}.
+        \item \textbf{Identify client needs} by collaborating with archivists to translate complex historical collection requirements into scalable GenAI architectures and technical workflows.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2cm}
+
+\begin{twocolentry}{Aug 2025 -- Present}
+    \textbf{Software Developer Intern (AI)}, Fund Flow OS
+\end{twocolentry}
+\vspace{0.1cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{Engineered a hybrid RAG and knowledge graph system} using LanceDB, achieving \textbf{<100ms latency} for complex legal context retrieval and context-aware LLM responses.
+        \item \textbf{Built a multi-agent orchestration engine} using Restate, ensuring fault-tolerant execution for autonomous AI tasks and front-end/back-end integration.
+        \item \textbf{Optimized user onboarding} by designing secure role-based authentication using Next.js and Supabase for a scalable enterprise platform.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2cm}
+
+\begin{twocolentry}{Mar 2022 -- Jul 2024}
+    \textbf{Data Engineer}, PwC Acceleration Centers - Bangalore, India
+\end{twocolentry}
+\vspace{0.1cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{Led client engagements} to identify and address data-driven business needs, utilizing Python and Alteryx to develop migration pipelines for 5M+ records, increasing speed by \textbf{50\%}.
+        \item \textbf{Uphold professional and technical standards} by optimizing SQL queries for audit reports, improving reporting efficiency by \textbf{40\%} while adhering to PwC firm guidance.
+        \item \textbf{Directed data engineers} and collaborated with cross-functional teams to design bulk data upload services, reducing manual validation effort by \textbf{70\%}.
+        \item \textbf{Facilitated technical presentations} for stakeholders, translating complex data models into actionable business insights for client-facing projects.
+    \end{highlights}
+\end{onecolentry}
+
+\section{Projects}
+
+    \begin{onecolentry}
+        \textbf{Food Access Predictive Analysis} \hfill \hrefWithoutArrow{https://github.com/JvkChaitanya/SNAP_Analysis}{Project Link}
+        \begin{highlights}
+            \item Led a comprehensive analysis of the 2019 Food Access Research Atlas to model demographic and economic drivers of food insecurity, aligning with optimization research methodologies.
+            \item Built a machine learning pipeline to process socio-economic variables, performed inferential statistical analysis, and visualized key findings using Matplotlib and Seaborn.
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.05 cm}
+
+    \begin{onecolentry}
+        \textbf{EuroSAT Image Classification} \hfill \hrefWithoutArrow{https://github.com/JvkChaitanya/EuroSAT}{Project Link}
+        \begin{highlights}
+            \item Engineered deep learning models (3D-CNNs) for multispectral land cover classification, demonstrating proficiency with advanced imaging tools and complex data analysis.
+            \item Implemented computer vision techniques including pixel-wise segmentation to enable nuanced category identification and pattern recognition.
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.05 cm}
+\begin{onecolentry}
+        \textbf{Clash of Clans Strategy Simulator} \hfill \hrefWithoutArrow{https://github.com/nishant-basu-tamu3/COC-Strategy-Tools}{Project Link}
+        \begin{highlights}
+            \item Developed an intelligent strategy tool for Clash of Clans using Retrieval-Augmented Generation (RAG) and Google Gemini to simulate battles and provide context-aware strategic recommendations.
+            \item Engineered a data extraction pipeline to harvest and structure information from game wikis, creating a comprehensive knowledge base for the LLM.
+        \end{highlights}
+    \end{onecolentry}
+    
+\end{document}
